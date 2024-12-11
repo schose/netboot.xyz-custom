@@ -4,9 +4,17 @@
 ###
 
 :start
-echo Hello world!
-sleep 10
+clear custom_choice
+menu This is my Test boot Menu
+item option_one ${space} Loading a kernel and initrd
 goto custom_exit
 
+:option_one
+kernel tftp://192.168.82.100/vmlinuz
+initrd tftp://192.168.82.100/initrd.img
+imgargs vmlinuz boot=live fetch=tftp://192.168.82.100/filesystem.squashfs
+boot || goto custom_exit
+
 :custom_exit
-exit 0
+chain utils.ipxe
+exit
