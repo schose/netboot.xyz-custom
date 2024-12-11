@@ -5,7 +5,7 @@
 
 :custom
 clear custom_choice
-menu This is a Test Menu test2
+menu test2
 item --gap This is the first sub menu
 item option_one ${space} Loading a kernel and initrd
 item option_two ${space} Loading an ISO
@@ -24,10 +24,6 @@ boot || goto custom_exit
 kernel https://boot.netboot.xyz/memdisk raw iso
 initrd http://path.to/iso
 boot || goto custom_exit
-
-:option_three
-echo Chains into another menu...
-chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom1.ipxe || goto custom
 
 :custom_exit
 chain utils.ipxe
