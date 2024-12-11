@@ -4,9 +4,11 @@
 ###
 
 :start
-clear custom_choice
+echo Hello world!
+sleep 10
 menu This is my Test boot Menu
 item option_one ${space} Loading a kernel and initrd
+sleep 10
 goto custom_exit
 
 :option_one
