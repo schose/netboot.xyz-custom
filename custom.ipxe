@@ -17,6 +17,4 @@ initrd tftp://192.168.82.100/initrd.img
 imgargs vmlinuz boot=live fetch=tftp://192.168.82.100/filesystem.squashfs
 boot || goto custom_exit
 
-:custom_exit
-chain utils.ipxe
-exit
+
