@@ -5,7 +5,7 @@
 
 :custom
 clear custom_choice
-menu This is a Test Menu
+menu This is a Test Menu test1
 item --gap This is the first sub menu
 item option_one ${space} Loading a kernel and initrd
 item option_two ${space} Loading an ISO
