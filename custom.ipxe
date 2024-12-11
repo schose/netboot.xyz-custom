@@ -5,10 +5,11 @@
 
 :custom
 clear custom_choice
-menu test8
+menu test9
 item --gap This is the first sub menu
 item option_one ${space} Loading a kernel and initrd
 item option_two ${space} test debian live
+item option_tree ${space} testme
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
@@ -25,7 +26,12 @@ boot || goto custom_exit
 imgfree
 kernel https://github.com/netbootxyz/debian-core-12/releases/download/12.7.0-e814dabe/vmlinuz boot=live fetch=https://github.com/netbootxyz/debian-squash/releases/download/2024.3-54fc2a3c/filesystem.squashfs
 initrd https://github.com/netbootxyz/debian-core-12/releases/download/12.7.0-e814dabe/initrd
- 
+
+:option_tree
+imgfree
+kernel tftp://192.168.82.100/vmlinuz boot=live fetch=tftp://192.168.82.100/filesystem.squashfs
+initrd tftp://192.168.82.100/initrd
+
 boot || goto custom_exit
 
 :custom_exit
