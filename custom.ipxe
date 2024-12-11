@@ -5,7 +5,7 @@
 
 :custom
 clear custom_choice
-menu test3
+menu test4
 item --gap This is the first sub menu
 item option_one ${space} Loading a kernel and initrd
 item option_two ${space} Loading an ISO
@@ -19,7 +19,7 @@ kernel tftp://192.168.82.100/vmlinuz
 initrd tftp://192.168.82.100/initrd.img
 initrd tftp://192.168.82.100/filesystem.squashfs
 
-imgargs boot=live findiso=/images/my-linux.iso toram ip=dhcp
+imgargs vmlinuz boot=live findiso=/images/my-linux.iso toram ip=dhcp
 boot || goto custom_exit
 
 :option_two
