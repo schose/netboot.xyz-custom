@@ -15,7 +15,7 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_one
-kernel tftp://192.168.82.100/vmlinuz boot=live findiso=/images/my-linux.iso toram ip=dhcp
+kernel tftp://192.168.82.100/vmlinuz boot=live rootfstype=squashfs findiso=/filesystem.squashfs toram ip=dhcp
 initrd tftp://192.168.82.100/initrd.img
 initrd tftp://192.168.82.100/filesystem.squashfs
 
