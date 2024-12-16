@@ -17,7 +17,7 @@ goto custom_exit
 
 :option_one
 imgfree
-kernel tftp://192.168.82.100/vmlinuz boot=live toram fetch=tftp://192.168.82.100/filesystem.squashfs
+kernel tftp://192.168.82.100/vmlinuz boot=live toram  keyboard-layouts=de fetch=tftp://192.168.82.100/filesystem.squashfs
 initrd tftp://192.168.82.100/initrd
 
 boot || goto custom_exit
