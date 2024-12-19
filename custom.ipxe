@@ -24,8 +24,8 @@ boot || goto custom_exit
 
 :option_two
 imgfree
-kernel tftp://192.168.82.100/vmlinuz boot=live fetch=tftp://192.168.82.100/filesystem.squashfs
-initrd tftp://192.168.82.100/initrd
+kernel tftp://192.168.101.1/vmlinuz boot=live fetch=tftp://192.168.101.1/filesystem.squashfs
+initrd tftp://192.168.101.1/initrd
 
 boot || goto custom_exit
 
